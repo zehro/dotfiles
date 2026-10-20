@@ -1,0 +1,77 @@
+[user]
+	# personal information
+	email = zehrofresher@gmail.com
+	name = Zehro Won
+[color]
+	# turn on auto coloring
+	ui = auto
+	diff = auto
+	branch = auto
+	grep = auto
+	status = auto
+[column]
+	# print output in columns aka ls
+	ui = auto, column, nodense
+	branch = auto, column, nodense
+	tag = auto, column, nodense
+[core]
+    editor = code --wait
+[diff]
+	# turn on rename and copy detection
+	renames = copy
+
+	# better diffs
+	algorithm = histogram
+[fetch]
+	# auto prune refs that are no longer tracking remotes upon 'git fetch'
+	prunt = true
+[init]
+    defaultBranch = main
+[log]
+	# show refs, heads, tags, remotes, etc... in log output
+	decorate = auto
+
+	# follow a single file through renames
+	follow = true
+[help]
+	# use the suggested git command when mispelled after 1.0 seconds
+	autocorrect = 10
+[pull]
+    rebase = false
+[push]
+	# push the current branch by default when given no arguments
+	default = simple
+[status]
+	# use short status
+	short = true
+
+	# show branch info in status
+	branch = true
+[rerere]
+	# turn on merge memory
+	enabled = true
+	autoupdate = true
+[alias]
+	# alias for git things
+	update = !git update-git-for-windows
+	pull = !git fetch origin && git pull && git status
+	push = !git pull && git push && git status
+	st = status
+	co = checkout
+	l = log
+	ls = log --oneline
+	com = !git add -A && git commit -ma
+	unstage = reset
+	clear = !git add -A && git reset --hard && git status
+	undo = !git reset --soft HEAD~1 && git status
+	nuke = !git reset --hard HEAD~1 && git status
+	slist = stash list
+	sclear = stash drop
+	
+	# custom history log
+	history = log --pretty=format:'%C(yellow)%h%Creset %Cblue<%ae>%Creset %Cgreen(%cr)%Creset | %s %Cred%d%Creset' --graph --date=short
+	hist = log --pretty=format:'%C(yellow)%h%Creset %Cblue<%ae>%Creset %Cgreen(%cr)%Creset | %s %Cred%d%Creset' --graph --date=short
+	tree = log --all --graph --decorate --oneline
+	stump = log --all --graph --decorate --oneline --simplify-by-decoration
+[safe]
+  directory = *
